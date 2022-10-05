@@ -23,7 +23,7 @@ CloudFormation do
 
   Route53_RecordSet(:DBHostRecord) {
     HostedZoneName FnSub("#{external_parameters[:dns_format]}.")
-    Name FnSub("#{external_parameters[:component_name]}.#{external_parameters[:dns_format]}.")
+    Name FnSub("${InstanceName}.#{external_parameters[:dns_format]}.")
     Type 'CNAME'
     TTL '60'
     ResourceRecords [ FnGetAtt('DBClusterInstance','Endpoint.Address') ]
