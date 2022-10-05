@@ -15,7 +15,7 @@ CloudFormation do
     DBClusterIdentifier Ref(:DBCluster)
     Engine external_parameters[:engine]
     PubliclyAccessible 'false'
-    DBInstanceClass Ref(:WriterInstanceType)
+    DBInstanceClass Ref(:InstanceType)
     EnablePerformanceInsights Ref('EnablePerformanceInsights')
     PerformanceInsightsRetentionPeriod FnIf('EnablePerformanceInsights', Ref('PerformanceInsightsRetentionPeriod'), Ref('AWS::NoValue'))
     Tags tags + [{ Key: 'Name', Value: FnJoin('-', [ Ref(:EnvironmentName), external_parameters[:component_name], 'instance' ])}]
