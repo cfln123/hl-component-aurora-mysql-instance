@@ -1,0 +1,9 @@
+engine: aurora-mysql
+family: aurora-mysql5.7
+
+dns_format: ${EnvironmentName}.${DnsDomain}
+
+instance_parameters:
+  max_allowed_packet: '52428800'
+  log_bin_trust_function_creators: '1'
+  wait_timeout: '3600'
