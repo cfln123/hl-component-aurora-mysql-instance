@@ -7,8 +7,8 @@ CfhighlanderTemplate do
     ComponentParam 'DBClusterSubnetGroup'
     ComponentParam 'DBInstanceParameterGroup'
     ComponentParam 'DBCluster'
-    ComponentParam 'InstanceType'
-    ComponentParam 'ServiceRegistry'
+    ComponentParam 'InstanceType', 'db.t3.medium'
+    ComponentParam 'ServiceRegistry', ''
 
     ComponentParam 'EnablePerformanceInsights', defined?(performance_insights) ? performance_insights : false
     ComponentParam 'PerformanceInsightsRetentionPeriod', defined?(performance_insights) && defined?(insights_retention)  ? insights_retention.to_i : 7
