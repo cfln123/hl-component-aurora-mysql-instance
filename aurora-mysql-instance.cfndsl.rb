@@ -1,5 +1,6 @@
 CloudFormation do
 
+  Condition('EnablePerformanceInsights', FnEquals(Ref(:EnablePerformanceInsights), 'true'))
   Condition("ServiceRegistrySet", FnNot(FnEquals(Ref('ServiceRegistry'), '')))
 
   RDS_DBParameterGroup(:DBInstanceParameter) {
