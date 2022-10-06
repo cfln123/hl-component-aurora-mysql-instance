@@ -5,7 +5,6 @@ CfhighlanderTemplate do
     ComponentParam 'EnvironmentType', 'development', allowedValues: ['development','production'], isGlobal: true
 
     ComponentParam 'DBClusterSubnetGroup'
-    ComponentParam 'DBInstanceParameterGroup'
     ComponentParam 'DBCluster'
     ComponentParam 'InstanceType', 'db.t3.medium'
     ComponentParam 'ServiceRegistry', ''
