@@ -3,7 +3,7 @@ CloudFormation do
   Condition('EnablePerformanceInsights', FnEquals(Ref(:EnablePerformanceInsights), 'true'))
   Condition("ServiceRegistrySet", FnNot(FnEquals(Ref('ServiceRegistry'), '')))
 
-  RDS_DBParameterGroup(:DBInstanceParameter) {
+  RDS_DBParameterGroup(:DBInstanceParameterGroup) {
     Description FnJoin(' ', [ Ref(:EnvironmentName), external_parameters[:component_name], 'instance parameter group' ])
     Family external_parameters[:family]
     Parameters external_parameters[:instance_parameters]
